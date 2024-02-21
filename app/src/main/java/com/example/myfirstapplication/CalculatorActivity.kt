@@ -7,6 +7,8 @@ import android.widget.TextView
 import com.example.myfirstapplication.R
 
 class CalculatorActivity : AppCompatActivity() {
+    private lateinit var findTvDisplay: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.calculator_main)
@@ -16,7 +18,7 @@ class CalculatorActivity : AppCompatActivity() {
         val sum = num1 + num2
 
         // Referencing R.id.tvDisplay
-        val findTvDisplay: TextView = findViewById(R.id.tvDisplay)
+        findTvDisplay  = findViewById(R.id.tvDisplay)
         findTvDisplay.text = sum.toString()
 
         // Referencing All Layout Elements
@@ -34,38 +36,75 @@ class CalculatorActivity : AppCompatActivity() {
         // Setting Onclick Handler
 
         button0.setOnClickListener {
-            findTvDisplay.text = "0"
+            button0Clicked(findTvDisplay)
         }
         button1.setOnClickListener {
-            findTvDisplay.text = "1"
+            button1Clicked(findTvDisplay)
         }
         button2.setOnClickListener {
-            findTvDisplay.text = "2"
+            button2Clicked(findTvDisplay)
         }
         button3.setOnClickListener {
-            findTvDisplay.text = "3"
+            button3Clicked(findTvDisplay)
         }
         button4.setOnClickListener {
-            findTvDisplay.text = "4"
+            button4Clicked(findTvDisplay)
         }
         button5.setOnClickListener {
-            findTvDisplay.text = "5"
+            button5Clicked(findTvDisplay)
         }
         button6.setOnClickListener {
-            findTvDisplay.text = "6"
+            button6Clicked(findTvDisplay)
         }
         button7.setOnClickListener {
-            findTvDisplay.text = "7"
+            button7Clicked(findTvDisplay)
         }
         button8.setOnClickListener {
-            findTvDisplay.text = "8"
+            button8Clicked(findTvDisplay)
         }
         button9.setOnClickListener {
-            findTvDisplay.text = "9"
+            button9Clicked(findTvDisplay)
         }
 
+    }
 
+    private fun button8Clicked(findTvDisplay: TextView) {
+        findTvDisplay.text = "9"
+    }
 
+    private fun button9Clicked(findTvDisplay: TextView) {
+        findTvDisplay.text = "8"
+    }
 
+    private fun button7Clicked(findTvDisplay: TextView) {
+        findTvDisplay.text = "7"
+    }
+
+    private fun button6Clicked(findTvDisplay: TextView) {
+        findTvDisplay.text = "6"
+    }
+
+    private fun button5Clicked(findTvDisplay: TextView) {
+        findTvDisplay.text = "5"
+    }
+
+    private fun button4Clicked(findTvDisplay: TextView) {
+        findTvDisplay.text = "4"
+    }
+
+    private fun button3Clicked(findTvDisplay: TextView) {
+        findTvDisplay.text = "3"
+    }
+
+    private fun button2Clicked(findTvDisplay: TextView) {
+        findTvDisplay.text = "2"
+    }
+
+    private fun button0Clicked(findTvDisplay: TextView) {
+        findTvDisplay.text = "0"
+    }
+
+    private fun button1Clicked(findTvDisplay: TextView) {
+        findTvDisplay.text = "1"
     }
 }
