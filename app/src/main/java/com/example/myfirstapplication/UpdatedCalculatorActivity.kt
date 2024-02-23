@@ -83,19 +83,20 @@ class CalculatorActivity : AppCompatActivity() {
 
     private fun buttonEqualClick() {
         operand2 = strNumber.toString().toInt()
-        var result:Int
 
-        when(operator) {
-            Operator.ADD -> result = operand1 + operand2
-            Operator.MUL -> result = operand1 * operand2
-            Operator.SUB -> result = operand1 * operand2
-            Operator.DIV -> result = operand1 / operand2
-            Operator.MUL -> result = operand1 * operand2
-            else -> result = 0
+        val result = when(operator) {
+            Operator.ADD ->  operand1 + operand2
+            Operator.MUL ->  operand1 * operand2
+            Operator.SUB ->  operand1 - operand2
+            Operator.DIV ->  operand1 / operand2
+            Operator.MUL ->  operand1 * operand2
+            else ->  0
         }
 
         strNumber.clear()
         strNumber.append(result.toString())
+        findTvDisplay.text = strNumber
+        isOperatorClicked= true
     }
 
     private fun operatorButtonClick( btn: Button) {
